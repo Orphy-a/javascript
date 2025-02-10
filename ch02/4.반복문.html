@@ -88,29 +88,28 @@
 
     <h4>구구단</h4>
     <table border="1">
-        <tr>
-            <th>2단</th>
-            <th>3단</th>
-            <th>4단</th>
-            <th>5단</th>
-            <th>6단</th>
-            <th>7단</th>
-            <th>8단</th>
-            <th>9단</th>
-        </tr>
+        <th>2단</th>
+        <th>3단</th>
+        <th>4단</th>
+        <th>5단</th>
+        <th>6단</th>
+        <th>7단</th>
+        <th>8단</th>
+        <th>9단</th>
+        <script>
+            for(let i=1; i<=9; i++) {
+                document.write("<tr>");
+                for(let j=2; j<=9; j++) {
+                    document.write("<td>");
+                    document.write(j + " x " + i + " = " + j*i);
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
     </table>
 
-    <script>
-        for(let i = 2;i<=9;i++){
-            document.write(i + "단" + "<br>");
-            for(let j = 1;j<=9;j++){
-                document.write(i + " * " + j + " = " + (i*j) + "<br>");
-
-            }
-            document.write("<br>");
-        }
-
-    </script>
+   
 
 </body>
 </html>
