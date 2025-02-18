@@ -9,14 +9,54 @@
     <h2>연습장</h2>
 
     <script>
-        
 
+
+        //btnUser 비동기 함수 정의
+        document.addEventListener("DOMContentLoaded", function(){
+            //btnUser 비동기 함수 정의
+            btnUsers.onclick = async function(){
+
+// fetch 함수로 파일 가져오기
+const response = await fetch('./data/users.json');
+
+//json 데이터를 파싱
+const data = await response.json();
+
+// 출력
+for(const user of data.users){
+    
+    // 태그 문자열로 동적 태그 생성
+    const tr = `<tr>
+                    <td>${user.uid}</td>
+                    <td>${user.name}</td>
+                    <td>${user.age}</td>
+                    <td>${user.addr}</td>
+                </tr>`;
+    
+    table.insertAdjacentHTML('beforeend', tr);
+    
+    
+}
+
+
+
+}
+        });
+        
 
 
     </script>
 
+    <button id="btnUsers">users 데이터 요청</button>
 
-
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td>이름</td>
+            <td>나이</td>
+            <td>주소</td>
+        </tr>
+    </table>
 
 
 </body>
